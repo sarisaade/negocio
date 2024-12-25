@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="./stylescarrito.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+     <script> (function(){ emailjs.init("z5kLRgpEiDGYL4lhx"); })(); </script>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <div class="logo"> 
+                <img src="./24FEC762-47F0-4F9E-8F29-CF139B27135F.webp" alt="Logo de LEGENDARIO JEANS">
+               
+            </div> 
+            <nav>
+                <ul> 
+                    <li><a href="./index.html">Inicio</a></li> 
+                    <li><a href="./productos.html">Productos</a></li> 
+                    <li><a href="./contacto.html">Contacto</a></li> 
+                </ul> 
+            </nav>    
+        </div> 
+    </header>
+    <main>
+      <div class="cart-container">
+        <h2>Carrito de Compras</h2>
+        <div class="cart-items"></div>
+        <p>Total: $<span class="cart-total">0.00</span></p>
+        <button class="clear-cart">Vaciar Carrito</button>
+        <button id="confirmar-carrito-btn" class="confirmar-carrito-btn">Confirmar Carrito</button>
+        <button onclick="location.href='productos.html'" class="volver-a-productos">Seguir Comprando</button>
+
+       <!-- Cuadro de diálogo para ingresar datos -->
+<!-- Cuadro de diálogo para ingresar datos -->
+<div id="dialog" class="dialog" style="display:none;">
+  <form id="confirmation-form" action="https://formspree.io/f/mpwzdjlz" method="POST" novalidate>
+    <h2>Ingrese sus datos para confirmar la compra</h2>
+    <div class="form-group">
+      <input type="text" id="buyer-name" name="name" placeholder="Nombre" required>
+      <span class="error-message" id="name-error"></span>
+    </div>
+    <div class="form-group">
+      <input type="email" id="buyer-email" name="email" placeholder="Correo Electrónico" required>
+      <span class="error-message" id="email-error"></span>
+    </div>
+    <div class="form-group">
+      <input type="tel" id="buyer-phone" name="phone" placeholder="Teléfono" required>
+      <span class="error-message" id="phone-error"></span>
+    </div>
+    
+    <button type="submit" id="comprar-btn" class="comprar-btn">Comprar</button>
+  </form>
+</div>
+
+
+        
+        <!-- Mensaje de confirmación estilizado -->
+        <div id="confirmation-message" class="confirmation-message" style="display:none;">
+          <h2>Compra Confirmada</h2>
+          <p> Al hacer clic en el botón de "Comprar", será redirigido a WhatsApp donde podrá confirmar su compra con todos los detalles proporcionados. Le agradecemos por su compra. Si tiene alguna pregunta adicional, no dude en contactarnos. ¡Gracias por confiar en nosotros!</p>
+          <button onclick="document.getElementById('confirmation-message').style.display='none'">Cerrar</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-info"> 
+        <div class="contact-info"> 
+          <h3>Contactos</h3>
+          <p>Teléfono: +54 11 1234 5678</p> 
+          <p>WhatsApp: <a href="https://wa.me/5491154511489" target="_blank">
+            <img src="./imagenes/whatsapp.png" alt="WhatsApp" class="social-icon"> Enviar mensaje</a>
+          </p>
+          <p>Dirección: Argerich 484, Ciudad de Buenos Aires, Argentina</p>
+        </div> 
+        <div class="hours-info"> 
+          <h3>Horarios</h3> 
+          <p>Lunes a Viernes: 08:00 - 17:00</p> 
+          <p>Sábados: Cerrado</p> 
+        </div> 
+        <div class="social-info"> 
+          <h3>Redes Sociales</h3> 
+          <p>
+            <a href="https://facebook.com/legendariojeans" target="_blank">
+            <img src="./imagenes/facebook.png" alt="Facebook" class="social-icon"> Facebook</a>
+          </p>
+          <p>
+            <a href="https://instagram.com/legendariojeans" target="_blank">
+            <img src="./imagenes/instagram.png" alt="Instagram" class="social-icon"> 
+            Instagram</a>
+          </p>
+        </div> 
+      </div> 
+      <p>&copy; 2024 Mi E-commerce de Ropa de Hombre</p>
+    </footer>
+    <script src="./script1.js"></script>
+</body>
+</html>
